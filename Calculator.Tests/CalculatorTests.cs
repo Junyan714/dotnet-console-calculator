@@ -35,7 +35,7 @@ public class CalculatorTests
     [Fact]
     public void TestLoop()
     {
-        Assert.Equal(true, Loop.Eval());
+        Assert.True(Loop.Eval());
     }
     [Fact]
     public void TestUnimplementedOperation()
