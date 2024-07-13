@@ -1,4 +1,6 @@
 ﻿using Calculator;
+using System;
+using System.Linq;
 
 Prompts.PrintWelcomeMenu();
 Prompts.PrintOptions();
@@ -6,11 +8,15 @@ Console.WriteLine("Enter operation number: ");
 string? OptionChoice = Console.ReadLine();
 Console.WriteLine("Enter number 1: ");
 string? Number1 = Console.ReadLine();
-Console.WriteLine("Enter number 2: ");
-string? Number2 = Console.ReadLine();
-
 float Number1Converted = float.Parse(Number1);
-float Number2Converted = float.Parse(Number2);
+
+float Number2Converted = 0f;
+string[] binaryOptions = { "1", "2", "3", "4", "6", "7", "12" };
+if (binaryOptions.Contains(OptionChoice)) {
+    Console.WriteLine("Enter number 2: ");
+    string? Number2 = Console.ReadLine();
+    Number2Converted = float.Parse(Number2);
+}
 switch(OptionChoice){
     case "1":
         float Sum = Evaluator.Eval("+", Number1Converted, Number2Converted);
@@ -23,6 +29,42 @@ switch(OptionChoice){
     case "3":
         float Product = Evaluator.Eval("*", Number1Converted, Number2Converted);
         Console.WriteLine($"{Number1Converted} * {Number2Converted} = {Product}");
+        break;
+    case "4":
+        float Division = Evaluator.Eval("/", Number1Converted, Number2Converted);
+        Console.WriteLine($"{Number1Converted} / {Number2Converted} = {Division}");
+        break;
+    case "5":
+        float Factorial = Evaluator.Eval("factorial", Number1Converted);
+        Console.WriteLine($"factorial{Number1Converted} = {Factorial}");
+        break;
+    case "6":
+        float Idempotence = Evaluator.Eval("^", Number1Converted, Number2Converted);
+        Console.WriteLine($"{Number1Converted}'s Idempotence of {Number2Converted} = {Idempotence}");
+        break;
+    case "7":
+        float Logarithmic = Evaluator.Eval("log", Number1Converted, Number2Converted);
+        Console.WriteLine($"{Number1Converted}'s logarithmic {Number2Converted} = {Logarithmic}");
+        break;
+    case "8":
+        float Sine = Evaluator.Eval("sin", Number1Converted);
+        Console.WriteLine($"Sine{Number1Converted} = {Sine}");
+        break;
+    case "9":
+        float Cosine = Evaluator.Eval("cos", Number1Converted);
+        Console.WriteLine($"Cosine{Number1Converted} = {Cosine}");
+        break;
+    case "10":
+        float Tangent = Evaluator.Eval("tan", Number1Converted);
+        Console.WriteLine($"Tangent{Number1Converted} = {Tangent}");
+        break;
+    case "11":
+        float Cotangent = Evaluator.Eval("cot", Number1Converted);
+        Console.WriteLine($"Cotangent{Number1Converted} = {Cotangent}");
+        break;
+    case "12":
+        float RectangleArea = Evaluator.Eval("rect", Number1Converted, Number2Converted);
+        Console.WriteLine($"RectangleArea of{Number1Converted},{Number2Converted} = {RectangleArea}");
         break;
     default:
         throw new Exception("unimplemented");
