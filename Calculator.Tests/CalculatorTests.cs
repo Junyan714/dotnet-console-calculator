@@ -130,12 +130,12 @@ public class CalculatorTests
     [Fact]
     public void TestSine_2()
     {
-        Assert.Equal(0L, Sine.Eval(0L));
+        Assert.Equal(1L, Sine.Eval(90L));
     }
     [Fact]
     public void TestSine_3()
     {
-        Assert.Equal(0L, Sine.Eval(0L));
+        Assert.Equal(0L, Sine.Eval(180L));
     }
 
     // Unit tests for Cosine operation
@@ -147,7 +147,7 @@ public class CalculatorTests
     [Fact]
     public void TestCosine_2()
     {
-        Assert.Equal(-1L, Cosine.Eval(180L));
+        Assert.Equal(0L, Cosine.Eval(90L));
     }
     [Fact]
     public void TestCosine_3()
@@ -169,7 +169,7 @@ public class CalculatorTests
     [Fact]
     public void TestTangent_3()
     {
-        Assert.Equal(1L, Tangent.Eval(45L));
+        Assert.Equal(-1L, Tangent.Eval(135L));
     }
 
     // Unit tests for Cotangent operation
@@ -181,12 +181,12 @@ public class CalculatorTests
     [Fact]
     public void TestCotangent_2()
     {
-        Assert.Equal(1L, Cotangent.Eval(45L));
+        Assert.Equal(-1L, Cotangent.Eval(135L));
     }
     [Fact]
     public void TestCotangent_3()
     {
-        Assert.Equal(1L, Cotangent.Eval(45L));
+        Assert.Equal(0L, Cotangent.Eval(90L));
     }
 
     // Unit tests for RectangleArea operation
@@ -327,7 +327,7 @@ public class CalculatorTests
     [Fact]
     public void TestSineOperation_2()
     {
-        Assert.Equal(1, Evaluator.Eval("sin", 90));
+        Assert.Equal(0.5, Evaluator.Eval("sin", 30));
     }
     [Fact]
     public void TestSineOperation_3()
@@ -343,7 +343,7 @@ public class CalculatorTests
     [Fact]
     public void TestCosineOperation_2()
     {
-        Assert.Equal(1, Evaluator.Eval("cos", 0));
+        Assert.Equal(0, Evaluator.Eval("cos", 90));
     }
     [Fact]
     public void TestCosineOperation_3()
@@ -364,13 +364,13 @@ public class CalculatorTests
     [Fact]
     public void TestTangentOperation_3()
     {
-        Assert.Equal(1, Evaluator.Eval("tan", 45));
+        Assert.Equal(-1, Evaluator.Eval("tan", 135));
     }
 
     [Fact]
     public void TestCotangentOperation_1()
     {
-        Assert.Equal(1, Evaluator.Eval("cot", 45));
+        Assert.Equal(0, Evaluator.Eval("cot", 90));
     }
     [Fact]
     public void TestCotangentOperation_2()
@@ -380,7 +380,7 @@ public class CalculatorTests
     [Fact]
     public void TestCotangentOperation_3()
     {
-        Assert.Equal(1, Evaluator.Eval("cot", 45));
+        Assert.Equal(-1, Evaluator.Eval("cot", 135));
     }
 
     [Fact]

@@ -4,7 +4,7 @@ namespace Calculator{
             // Convert degrees to radians
             float radians = (float)(degree * Math.PI / 180.0);
             // Calculate the angle in radians
-            return 1.0f / (float)Math.Tan(radians);
+            return (float)Math.Round(1.0f / Math.Tan(radians), 2);
         }
         
     }
