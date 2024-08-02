@@ -18,6 +18,9 @@ public class Prompts{
         Console.WriteLine("10. Tangent");
         Console.WriteLine("11. Cotangent");
         Console.WriteLine("12. RectangleArea");
+        Console.WriteLine("13. RectangleCircumference");
+        Console.WriteLine("14. CircleArea");
+        Console.WriteLine("15. CircleCircumference");
     }
 
 }

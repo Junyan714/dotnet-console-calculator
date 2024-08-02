@@ -11,11 +11,19 @@ string? Number1 = Console.ReadLine();
 float Number1Converted = float.Parse(Number1);
 
 float Number2Converted = 0f;
-string[] binaryOptions = { "1", "2", "3", "4", "6", "7", "12" };
+string[] binaryOptions = { "1", "2", "3", "4", "6", "7", "12", "13" };
 if (binaryOptions.Contains(OptionChoice)) {
     Console.WriteLine("Enter number 2: ");
     string? Number2 = Console.ReadLine();
     Number2Converted = float.Parse(Number2);
+}
+
+float Number3Converted = 0f;
+string[] tripleOptions = { "13" };
+if (tripleOptions.Contains(OptionChoice)) {
+    Console.WriteLine("Enter number 3: ");
+    string? Number3 = Console.ReadLine();
+    Number3Converted = float.Parse(Number3);
 }
 switch(OptionChoice){
     case "1":
@@ -65,6 +73,18 @@ switch(OptionChoice){
     case "12":
         float RectangleArea = Evaluator.Eval("rect", Number1Converted, Number2Converted);
         Console.WriteLine($"RectangleArea of{Number1Converted},{Number2Converted} = {RectangleArea}");
+        break;
+    case "13":
+        float RectangleCircumference = Evaluator.Eval("rect_c", Number1Converted, Number2Converted, Number3Converted);
+        Console.WriteLine($"RectangleCircumference of {Number1Converted}, {Number2Converted}, {Number3Converted} = {RectangleCircumference}");
+        break;
+    case "14":
+        float CircleArea = Evaluator.Eval("circle_a", Number1Converted);
+        Console.WriteLine($"CircleArea of {Number1Converted} = {CircleArea}");
+        break;
+    case "15":
+        float CircleCircumference = Evaluator.Eval("circle_c", Number1Converted);
+        Console.WriteLine($"CircleCircumference of {Number1Converted} = {CircleCircumference}");
         break;
     default:
         throw new Exception("unimplemented");

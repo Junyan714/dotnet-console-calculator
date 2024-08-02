@@ -43,6 +43,15 @@ namespace Calculator{
                 case "rect":
                     result = RectangleArea.Eval(Operands[0], Operands[1]);
                     break;
+                case "rect_c":
+                    result = RectangleCircumference.Eval(Operands[0], Operands[1], Operands[2]);
+                    break;
+                case "circle_a":
+                    result = CircleArea.Eval(Operands[0]);
+                    break;
+                case "circle_c":
+                    result = CircleCircumference.Eval(Operands[0]);
+                    break;
                 default:
                     throw new Exception("unimplemented");
             }

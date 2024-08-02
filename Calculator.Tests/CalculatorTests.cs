@@ -206,6 +206,51 @@ public class CalculatorTests
         Assert.Equal(30L, RectangleArea.Eval(5L, 6L));
     }
 
+    // Unit tests for the circumference of triangle
+    [Fact]
+    public void TestRectangleCircumference_1()
+    {
+        Assert.Equal(18L, RectangleCircumference.Eval(9L, 6L, 3L));
+    }
+    [Fact]
+    public void TestRectangleCircumference_2()
+    {
+        Assert.Equal(6L, RectangleCircumference.Eval(1L, 2L, 3L));
+    }
+    [Fact]
+    public void TestRectangleCircumference_3()
+    {
+        Assert.Equal(3L, RectangleCircumference.Eval(1L, 1L, 1L));
+    }
+    // Unit tests for the area of circle
+    [Fact]
+    public void TestCircleArea_1()
+    {
+        Assert.Equal(3.14, CircleArea.Eval(1f), 2);
+    }
+    public void TestCircleArea_2()
+    {
+        Assert.Equal(3.14 * 4f, CircleArea.Eval(2f), 2);
+    }
+    public void TestCircleArea_3()
+    {
+        Assert.Equal(3.14 * 9f, CircleArea.Eval(3f), 2);
+    }
+    // Unit tests for the circumference of circle.
+    [Fact]
+    public void TestCircleCircumference_1()
+    {
+        Assert.Equal(3.14f * 2, CircleCircumference.Eval(1f), 2);
+    }
+    public void TestCircleCircumference_2()
+    {
+        Assert.Equal(3.14f * 4, CircleCircumference.Eval(2f), 2);
+    }
+    public void TestCircleCircumference_3()
+    {
+        Assert.Equal(3.14f * 6, CircleCircumference.Eval(3f), 2);
+    }
+
     // Operation tests with Evaluator
     [Fact]
     public void TestAddOperation_1()
@@ -397,6 +442,54 @@ public class CalculatorTests
     public void TestRectangleAreaOperation_3()
     {
         Assert.Equal(30, Evaluator.Eval("rect", 5, 6));
+    }
+
+    [Fact]
+    public void TestRectangleCircumferenceOperation_1()
+    {
+        Assert.Equal(6, Evaluator.Eval("rect_c", 1, 2, 3));
+    }
+    [Fact]
+    public void TestRectangleCircumferenceOperation_2()
+    {
+        Assert.Equal(15, Evaluator.Eval("rect_c", 4, 5, 6));
+    }
+    [Fact]
+    public void TestRectangleCircumferenceOperation_3()
+    {
+        Assert.Equal(600, Evaluator.Eval("rect_c", 100, 200, 300));
+    }
+
+    [Fact]
+    public void TestCircleAreaOperation_1()
+    {
+        Assert.Equal(3.14 * 1f, Evaluator.Eval("circle_a", 1f), 2);
+    }
+    [Fact]
+    public void TestCircleAreaOperation_2()
+    {
+        Assert.Equal(3.14 * 4f, Evaluator.Eval("circle_a", 2f), 2);
+    }
+    [Fact]
+    public void TestCircleAreaOperation_3()
+    {
+        Assert.Equal(3.14 * 9f, Evaluator.Eval("circle_a", 3f), 2);
+    }
+
+    [Fact]
+    public void TestCircleCircumferenceOperation_1()
+    {
+        Assert.Equal(3.14 * 2f, Evaluator.Eval("circle_c", 1f), 2);
+    }
+    [Fact]
+    public void TestCircleCircumferenceOperation_2()
+    {
+        Assert.Equal(3.14 * 4f, Evaluator.Eval("circle_c", 2f), 2);
+    }
+    [Fact]
+    public void TestCircleCircumferenceOperation_3()
+    {
+        Assert.Equal(3.14 * 6f, Evaluator.Eval("circle_c", 3f), 2);
     }
 
 
