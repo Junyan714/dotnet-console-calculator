@@ -21,6 +21,10 @@ public class Prompts{
         Console.WriteLine("13. RectangleCircumference");
         Console.WriteLine("14. CircleArea");
         Console.WriteLine("15. CircleCircumference");
+
+        Console.WriteLine("#. NoneStopMode");
+        Console.WriteLine("*. LastAnswer");
+        Console.WriteLine("ESC. Exit");
     }
 
 }

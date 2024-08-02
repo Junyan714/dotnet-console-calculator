@@ -71,4 +71,4 @@ dotnet test --collect:"XPlat Code Coverage"
 Then to make a report:
 
 dotnet tool install --global dotnet-reportgenerator-globaltool
-~/.dotnet/tools/reportgenerator -reports:./Calculator.Tests/TestResults/213da911-6222-430f-80a2-e1af629eb305/coverage.cobertura.xml -targetdir:reports
+~/.dotnet/tools/reportgenerator -reports:./Calculator.Tests/TestResults/592a163c-c976-4c62-bed4-55a606484bb9/coverage.cobertura.xml -targetdir:reports
